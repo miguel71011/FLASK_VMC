@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %} {% block titulo %} Inicio {% endblock %} {% block contenido %}
+<h3>acontinuacion deberas introducir la informacion de tu base de datos</h3>
+<form action="{{ url_for('crear_producto') }}" method="POST">
+
+    <div class="row">
+        <div class="col-2 mb-3">
+            <label for="nombre_base_datos">Nombre de la base de datos</label>
+            
+        </div>
+        <div class="col-4 mb-3">
+            <input type="text" required class="form-control" id="nombre_base_datos" name="nombre_base_datos">
+        </div>
+        <div class="col-6 mb-3">
+            <h6>nombre de la base de datos que quieres usar en este proyecto</h6>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-2 mb-3">
+            <label for="nombre_usuario">Nombre de usuario</label>
+            
+        </div>
+        <div class="col-4 mb-3">
+            <input type="text" required class="form-control" id="nombre_usuario" name="nombre_usuario">
+        </div>
+        <div class="col-4 mb-3">
+            <h6>nombre de usuario de tu base de datos</h6>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-2 mb-3">
+            <label for="contrasena_base_datos">contraseña</label>
+            
+        </div>
+        <div class="col-4 mb-3">
+            <input type="password" required class="form-control" id="contrasena_base_datos" name="contrasena_base_datos">
+        </div>
+        <div class="col-4 mb-3">
+            <h6>la contraseña de tu base de datos</h6>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-2 mb-3">
+            <label for="servidor_base_datos">Servidor de la base de datos</label>
+        </div>
+        <div class="col-4 mb-3">            
+            <input type="text" required class="form-control" id="servidor_base_datos" name="servidor_base_datos">
+        </div>
+        <div class="col-4 mb-3">
+            <h6>Deberias con sultar con tu proovedor de alojamiento web si al direccion de localhots no funsiona</h6>
+        </div>   
+    </div>
+    <div class="row">
+        <div class="col-2 mb-3">
+            <label for="puerto">puerto</label>
+        </div>
+        <div class="col-4 mb-3">            
+            <input type="number" required class="form-control" id="puerto" name="puerto">
+        </div>
+        <div class="col-4 mb-3">
+            <h6>Direcion del puerto que estas utilizando en tu base de datos</h6>
+        </div>   
+    </div>
+     
+    
+    <center>
+        <button type="submit" class=" btn btn-primary">enviar</button>
+    </center>
+    
+{% endblock %}
