@@ -1,0 +1,10 @@
+{% extends 'layouts/base.html' %} {% block titulo %} tabla {% endblock %} {% block contenido %}
+
+   
+    {% for tabla in tablas %}
+        <li>
+            <a href="{{ url_for('descripcion', nombre=tabla[0]) }}">{{tabla[0]}}</a>
+        </li>
+    {% endfor %}
+
+{% endblock %}

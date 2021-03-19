@@ -1,6 +1,8 @@
 from flask import render_template
 from src import app
 import src.config.globals as globals
+from src.models.BaseDatos import DB
+
 
 @app.route('/')
 def index():
@@ -9,5 +11,23 @@ def index():
         
         return render_template('instalacion.html')
     else:
-        
-        return render_template('index.html')
+        Db = DB()
+        db =Db.BaseDeDatos()
+        print()
+        return render_template('index.html', db=db)
+
+@app.route('/tablas/<nombre>')
+def verTables(nombre):
+    Db = DB()
+
+    tablas = Db.trearTables(nombre)
+
+    return render_template('tabla.html', tablas=tablas)
+
+@app.route('/descripcion/<nombre>')
+def descripcion(nombre):
+    Db = DB()
+
+    desc = Db.descripciondeTable(nombre)
+
+    return render_template('descripcion.html', descripcion=desc)       

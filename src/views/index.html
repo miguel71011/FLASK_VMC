@@ -1,5 +1,10 @@
 {% extends 'layouts/base.html' %} {% block titulo %} Inicio {% endblock %} {% block contenido %}
-<h3>Saludos desde una render template de flask</h3>
-<a href="{{url_for('productos')}}">productos</a>
+
     
+    {% for DB in db %}
+        <li>
+            <a href="{{ url_for('verTables', nombre=DB[0]) }}">{{DB[0]}}</a>
+        </li>
+    {% endfor %}
+
 {% endblock %}

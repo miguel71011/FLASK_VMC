@@ -1,0 +1,34 @@
+{% extends 'layouts/base.html' %} {% block titulo %} tabla {% endblock %} {% block contenido %}
+
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Campo</th>
+                <th>Tipo</th>
+                <th>Null</th>
+                <th>Key</th>
+                <th>fefault</th>
+                <th>extra</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for desc in descripcion %}
+                <tr>
+                    <td>{{ desc[0] }}</td>
+                    <td>{{ desc[1] }}</td>
+                    <td>{{ desc[2] }}</td>
+                    <td >{{ desc[3] }}</td>
+                    <td >{{ desc[4] }}</td>
+                    <td >{{ desc[5] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+   
+    
+
+{% endblock %}
